@@ -1,4 +1,4 @@
-package com.example.smartfinancemanagementapp.Domain
+package com.example.smartfinancemanagementapp.domain.Model
 
 import android.os.Parcel
 import android.os.Parcelable

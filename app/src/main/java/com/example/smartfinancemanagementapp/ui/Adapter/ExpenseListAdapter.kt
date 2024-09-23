@@ -1,4 +1,4 @@
-package com.example.smartfinancemanagementapp.Adapter
+package com.example.smartfinancemanagementapp.ui.Adapter
 
 import android.content.Context
 import android.icu.text.DecimalFormat
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.smartfinancemanagementapp.Domain.ExpenseDomain
+import com.example.smartfinancemanagementapp.domain.Model.ExpenseDomain
 import com.example.smartfinancemanagementapp.databinding.ViewholderItemsBinding
 
 class ExpenseListAdapter(private val items:MutableList<ExpenseDomain>):

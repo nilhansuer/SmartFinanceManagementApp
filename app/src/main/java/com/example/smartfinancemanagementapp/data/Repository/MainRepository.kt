@@ -1,6 +1,6 @@
-package com.example.smartfinancemanagementapp.Repository
+package com.example.smartfinancemanagementapp.data.Repository
 
-import com.example.smartfinancemanagementapp.Domain.ExpenseDomain
+import com.example.smartfinancemanagementapp.domain.Model.ExpenseDomain
 
 class MainRepository {
     val items= mutableListOf(

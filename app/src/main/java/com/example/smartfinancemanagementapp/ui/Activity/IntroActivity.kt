@@ -1,11 +1,13 @@
-package com.example.smartfinancemanagementapp.Activity
+package com.example.smartfinancemanagementapp.ui.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smartfinancemanagementapp.databinding.ActivityIntroBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class IntroActivity: AppCompatActivity() {
     private lateinit var binding: ActivityIntroBinding
 
