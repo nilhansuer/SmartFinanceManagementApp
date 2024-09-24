@@ -2,10 +2,14 @@ package com.example.smartfinancemanagementapp.data
 
 import android.content.Context
 import androidx.room.Room
+import com.example.smartfinancemanagementapp.data.Model.ExpenseDao
+import com.example.smartfinancemanagementapp.data.Model.ExpenseDatabase
+import com.example.smartfinancemanagementapp.data.Repository.ExpenseRepository
 import com.example.smartfinancemanagementapp.data.Repository.MainRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -14,29 +18,30 @@ import javax.inject.Singleton
 class AppModule {
 
     @Provides
-    @Singleton
+    @Singleton // Prevents creating a new db everytime the app runs.
     fun provideMainRepository(): MainRepository {
         return MainRepository()
     }
 
-    /*
     @Provides
     @Singleton
-    fun provideApiService(): ApiService {
-
-    }
-     */
-
-    /*
-    @Provides
-    @Singleton
-    fun provideDatabase(context: Context): MyDatabase {
+    fun provideExpenseDatabase(@ApplicationContext appContext: Context): ExpenseDatabase {
         return Room.databaseBuilder(
-            context,
-            MyDatabase::class.java,
-            "my_database"
+            appContext,
+            ExpenseDatabase::class.java,
+            "expense_database"
         ).build()
-
     }
-     */
+
+    @Provides
+    @Singleton
+    fun provideExpenseRepository(expenseDao: ExpenseDao): ExpenseRepository {
+        return ExpenseRepository(expenseDao)
+    }
+
+    @Provides
+    @Singleton
+    fun provideExpenseDao(database: ExpenseDatabase): ExpenseDao {
+        return database.expenseDao()
+    }
 }

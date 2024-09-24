@@ -57,9 +57,14 @@ dependencies {
 
     // Room integration
     implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
 
     // Hilt integration
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+    // CoroutineScope integration that belongs to ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
 }

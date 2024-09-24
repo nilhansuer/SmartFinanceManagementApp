@@ -17,4 +17,6 @@
     <color name="light2_green">#93F3AD</color>
     <color name="extra2_light_blue">#7B97BAF0</color>
     <color name="light_green">#6913B93C</color>
+    <color name="light2_red">#F0B6BC</color>
+    <color name="dark_red">#C50519</color>
 </resources>
