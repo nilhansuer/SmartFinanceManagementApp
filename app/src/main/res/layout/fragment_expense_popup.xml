@@ -92,7 +92,8 @@
                     android:layout_marginTop="5dp"
                     android:ems="10"
                     android:textSize="18sp"
-                    android:inputType="text"
+                    android:focusable="false"
+                    android:inputType="none"
                     android:hint="gün/ay/yıl"/>
 
             </LinearLayout>

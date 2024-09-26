@@ -2,7 +2,6 @@ package com.example.smartfinancemanagementapp.ui.Adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.icu.text.DecimalFormat
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -16,14 +15,12 @@ class ExpenseListAdapter(private var items: List<ExpenseEntity>):
     class Viewholder(val binding: ViewholderItemsBinding):RecyclerView.ViewHolder(binding.root)
 
     private lateinit var context:Context
-    private var formatter:DecimalFormat? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): Viewholder {
         context=parent.context
-        formatter= DecimalFormat("###,###,###,##")
         val binding=ViewholderItemsBinding.inflate(LayoutInflater.from(context),parent,false)
         return Viewholder(binding)
     }
@@ -33,7 +30,7 @@ class ExpenseListAdapter(private var items: List<ExpenseEntity>):
 
         holder.binding.titleTxt.text = item.title
         holder.binding.timeTxt.text = item.time
-        holder.binding.priceTxt.text = formatter?.format(item.price) + " TL"
+        holder.binding.priceTxt.text = item.price.toString() + " TL"
         val drawableResourceId =
             holder.itemView.resources.getIdentifier(item.pic, "drawable", context.packageName)
 
@@ -47,6 +44,6 @@ class ExpenseListAdapter(private var items: List<ExpenseEntity>):
     @SuppressLint("NotifyDataSetChanged")
     fun submitList(newItems: List<ExpenseEntity>) {
         items = newItems
-        notifyDataSetChanged() // Veriler değiştiğinde RecyclerView'ı güncelle
+        notifyDataSetChanged()
     }
 }

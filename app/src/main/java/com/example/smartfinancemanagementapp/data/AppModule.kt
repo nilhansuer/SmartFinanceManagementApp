@@ -18,13 +18,13 @@ import javax.inject.Singleton
 class AppModule {
 
     @Provides
-    @Singleton // Prevents creating a new db everytime the app runs.
+    @Singleton
     fun provideMainRepository(): MainRepository {
         return MainRepository()
     }
 
     @Provides
-    @Singleton
+    @Singleton // Prevents creating a new db everytime the app runs.
     fun provideExpenseDatabase(@ApplicationContext appContext: Context): ExpenseDatabase {
         return Room.databaseBuilder(
             appContext,
