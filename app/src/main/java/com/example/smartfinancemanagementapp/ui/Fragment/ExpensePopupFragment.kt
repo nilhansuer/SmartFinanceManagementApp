@@ -17,8 +17,9 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.util.Calendar
 
-@AndroidEntryPoint
-class ExpensePopupFragment(private val categoryType: Int, private val onAddExpense: (String, Double, String) -> Unit) : DialogFragment() {
+class ExpensePopupFragment(private val categoryType: Int,
+                           private val onAddExpense: (String, Double, String, String) -> Unit
+) : DialogFragment() {
 
     private lateinit var bindingPopup: FragmentExpensePopupBinding
 
@@ -49,6 +50,13 @@ class ExpensePopupFragment(private val categoryType: Int, private val onAddExpen
             else -> "expense_others_list.txt"
         }
 
+        val categoryPic = when (categoryType){
+            1 -> "img1"
+            2 -> "btn_2"
+            3 -> "btn_1"
+            else -> "btn_3"
+        }
+
         try {
             val assetManager: AssetManager = requireActivity().assets
             val inputStream = assetManager.open(categoryFileName)
@@ -75,7 +83,7 @@ class ExpensePopupFragment(private val categoryType: Int, private val onAddExpen
             val price = priceString.toDoubleOrNull() ?: 0.0
             val date = editDate.text.toString()
 
-            onAddExpense(category, price, date)  // send data to the MainActivity with callback
+            onAddExpense(category, price, categoryPic, date)  // send data to the MainActivity with callback
             dismiss()
         }
 

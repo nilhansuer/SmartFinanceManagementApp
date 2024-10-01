@@ -31,6 +31,7 @@ class ExpenseListAdapter(private var items: List<ExpenseEntity>):
         holder.binding.titleTxt.text = item.title
         holder.binding.timeTxt.text = item.time
         holder.binding.priceTxt.text = item.price.toString() + " TL"
+
         val drawableResourceId =
             holder.itemView.resources.getIdentifier(item.pic, "drawable", context.packageName)
 
