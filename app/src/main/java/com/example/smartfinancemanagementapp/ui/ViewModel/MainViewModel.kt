@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.smartfinancemanagementapp.data.Repository.ExpenseRepository
-import com.example.smartfinancemanagementapp.data.Repository.MainRepository
 import com.example.smartfinancemanagementapp.domain.Model.ExpenseEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

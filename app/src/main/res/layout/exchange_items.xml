@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:elevation="3dp"
+    android:background="@drawable/white_bg"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/exchange_icon_bg"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533"
+        app:srcCompat="@drawable/exchange_icon" />
+
+    <TextView
+        android:id="@+id/typeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/darkblue"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/pic"
+        app:layout_constraintTop_toTopOf="@+id/pic"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutSellRate"
+        app:layout_constraintTop_toBottomOf="@+id/typeTxt"
+        app:layout_constraintStart_toStartOf="@+id/typeTxt"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Satış:   "
+            android:textColor="@color/dark_green"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/sellRateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="35.60"
+            android:textColor="@color/darkblue" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutBuyRate"
+        app:layout_constraintTop_toBottomOf="@+id/layoutSellRate"
+        app:layout_constraintStart_toStartOf="@+id/typeTxt"
+        app:layout_constraintBottom_toBottomOf="@+id/pic"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alış:     "
+            android:textColor="@color/dark_red"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/buyRateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40"
+            android:textColor="@color/darkblue" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/currencyCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USD"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/darkblue"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

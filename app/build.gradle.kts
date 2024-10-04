@@ -73,4 +73,8 @@ dependencies {
     // CoroutineScope integration that belongs to ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
 }

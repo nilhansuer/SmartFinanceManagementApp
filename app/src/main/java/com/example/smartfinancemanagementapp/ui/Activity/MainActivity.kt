@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.smartfinancemanagementapp.R
 import com.example.smartfinancemanagementapp.databinding.ActivityMainBinding
+import com.example.smartfinancemanagementapp.ui.Fragment.ExchangeFragment
 import com.example.smartfinancemanagementapp.ui.Fragment.HomeFragment
 import com.example.smartfinancemanagementapp.ui.Fragment.ProfileFragment
 import com.example.smartfinancemanagementapp.ui.ViewModel.MainViewModel
@@ -26,27 +29,26 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
 
-        var transaction = supportFragmentManager.beginTransaction()
-
-        transaction.replace(R.id.fragmentContainer, HomeFragment())
-        transaction.addToBackStack(null)
-        transaction.commit()
+        openFragment(HomeFragment())
 
         binding.layoutHome.setOnClickListener{
-            transaction = supportFragmentManager.beginTransaction()
-
-            transaction.replace(R.id.fragmentContainer, HomeFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
+            openFragment(HomeFragment())
         }
 
         binding.layoutProfile.setOnClickListener{
-            transaction = supportFragmentManager.beginTransaction()
-
-            transaction.replace(R.id.fragmentContainer, ProfileFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
-
+            openFragment(ProfileFragment())
         }
+
+        binding.layoutExchange.setOnClickListener{
+            openFragment(ExchangeFragment())
+        }
+    }
+
+    private fun openFragment(fragment: Fragment){
+        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+
+        transaction.replace(R.id.fragmentContainer, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

@@ -19,4 +19,7 @@
     <color name="light_green">#6913B93C</color>
     <color name="light2_red">#F0B6BC</color>
     <color name="dark_red">#C50519</color>
+    <color name="purple">#9C27B0</color>
+    <color name="yellow">#70FFC107</color>
+    <color name="dark_green">#065F1B</color>
 </resources>
