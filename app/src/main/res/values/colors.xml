@@ -8,6 +8,7 @@
     <color name="lightgrey">#DEDEDE</color>
     <color name="pink">#DBB7F1</color>
     <color name="grey">#6D000000</color>
+    <color name="dark_grey">#BB000000</color>
     <color name="intro_color">#236AD6</color>
     <color name="light_red">#F0A0A9</color>
     <color name="light_orange">#FF7D4D</color>
@@ -20,6 +21,7 @@
     <color name="light2_red">#F0B6BC</color>
     <color name="dark_red">#C50519</color>
     <color name="purple">#9C27B0</color>
+    <color name="light_purple">#209C27B0</color>
     <color name="yellow">#70FFC107</color>
     <color name="dark_green">#065F1B</color>
 </resources>

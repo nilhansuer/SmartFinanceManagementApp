@@ -11,7 +11,6 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.smartfinancemanagementapp.databinding.FragmentExpensePopupBinding
-import dagger.hilt.android.AndroidEntryPoint
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
