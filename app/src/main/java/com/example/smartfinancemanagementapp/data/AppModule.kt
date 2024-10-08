@@ -4,7 +4,10 @@ import android.content.Context
 import androidx.room.Room
 import com.example.smartfinancemanagementapp.data.Model.ExpenseDao
 import com.example.smartfinancemanagementapp.data.Model.ExpenseDatabase
+import com.example.smartfinancemanagementapp.data.Model.GoalsDao
+import com.example.smartfinancemanagementapp.data.Model.GoalsDatabase
 import com.example.smartfinancemanagementapp.data.Repository.ExpenseRepository
+import com.example.smartfinancemanagementapp.data.Repository.GoalsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,5 +39,28 @@ class AppModule {
     @Singleton
     fun provideExpenseDao(database: ExpenseDatabase): ExpenseDao {
         return database.expenseDao()
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideGoalsDatabase(@ApplicationContext appContext: Context): GoalsDatabase {
+        return Room.databaseBuilder(
+            appContext,
+            GoalsDatabase::class.java,
+            "goals_database"
+        ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGoalsRepository(goalsDao: GoalsDao): GoalsRepository {
+        return GoalsRepository(goalsDao)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGoalsDao(database: GoalsDatabase): GoalsDao {
+        return database.goalsDao()
     }
 }

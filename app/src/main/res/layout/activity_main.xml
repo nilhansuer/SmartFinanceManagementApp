@@ -113,6 +113,32 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutGoal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/imageGoal"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        app:tint="@color/grey"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/goal_icon" />
+
+                    <TextView
+                        android:id="@+id/textGoal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Hedef"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/layoutProfile"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"

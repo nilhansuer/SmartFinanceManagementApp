@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:text="50.000 TL"
+                android:text="50000.0 TL"
                 android:layout_marginStart="50dp"
                 android:layout_marginBottom="20dp"
                 android:textStyle="bold"

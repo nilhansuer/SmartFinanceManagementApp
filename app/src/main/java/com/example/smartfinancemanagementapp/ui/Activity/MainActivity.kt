@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.smartfinancemanagementapp.R
 import com.example.smartfinancemanagementapp.databinding.ActivityMainBinding
 import com.example.smartfinancemanagementapp.ui.Fragment.ExchangeFragment
+import com.example.smartfinancemanagementapp.ui.Fragment.GoalsFragment
 import com.example.smartfinancemanagementapp.ui.Fragment.HomeFragment
 import com.example.smartfinancemanagementapp.ui.Fragment.ProfileFragment
 import com.example.smartfinancemanagementapp.ui.ViewModel.MainViewModel
@@ -42,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         binding.layoutExchange.setOnClickListener{
             openFragment(ExchangeFragment())
         }
+
+        binding.layoutGoal.setOnClickListener {
+            openFragment(GoalsFragment())
+        }
+
     }
 
     private fun openFragment(fragment: Fragment){

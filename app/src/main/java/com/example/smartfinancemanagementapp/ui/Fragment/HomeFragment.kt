@@ -61,6 +61,11 @@ class HomeFragment : Fragment() {
             (binding.view.adapter as ExpenseListAdapter).submitList(expenses)
         }
 
+        // Observe total expense
+        homeViewModel.totalExpense.observe(viewLifecycleOwner) { total ->
+            binding.textGider.text = "$total TL"
+        }
+
         Glide.with(this)
             .load(R.drawable.profile_photo)
             .circleCrop()

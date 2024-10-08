@@ -1,8 +1,10 @@
 package com.example.smartfinancemanagementapp.ui.ViewModel
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bumptech.glide.load.Transformation
 import com.example.smartfinancemanagementapp.data.Repository.ExpenseRepository
 import com.example.smartfinancemanagementapp.domain.Model.ExpenseEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,6 +21,13 @@ class HomeViewModel @Inject constructor(private val repository: ExpenseRepositor
     fun insert(expense: ExpenseEntity) = viewModelScope.launch {
         repository.insert(expense)
     }
+
+    private val _totalExpense = MediatorLiveData<Double>().apply {
+        addSource(allExpenses) { expenses ->
+            value = expenses.sumOf { it.price }
+        }
+    }
+    val totalExpense: LiveData<Double> = _totalExpense
 
     // Delete Data
     fun delete(expense: ExpenseEntity) = viewModelScope.launch{
