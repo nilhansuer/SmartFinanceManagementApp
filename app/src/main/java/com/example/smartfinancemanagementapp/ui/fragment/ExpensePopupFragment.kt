@@ -1,3 +1,5 @@
+package com.example.smartfinancemanagementapp.ui.fragment
+
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.content.res.AssetManager

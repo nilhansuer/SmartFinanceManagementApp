@@ -1,0 +1,31 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.smartfinancemanagementapp.ui.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.smartfinancemanagementapp.ui.fragment.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/exchangeFragment"
+        android:name="com.example.smartfinancemanagementapp.ui.fragment.ExchangeFragment"
+        tools:layout="@layout/fragment_exchange" />
+
+    <fragment
+        android:id="@+id/goalsFragment"
+        android:name="com.example.smartfinancemanagementapp.ui.fragment.GoalsFragment"
+        tools:layout="@layout/fragment_goals" />
+
+    <fragment
+        android:id="@+id/edittingProfileFragment"
+        android:name="com.example.smartfinancemanagementapp.ui.fragment.EdittingProfileFragment"
+        tools:layout="@layout/fragment_editting_profile" />
+
+</navigation>

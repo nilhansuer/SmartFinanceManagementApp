@@ -2,23 +2,18 @@ package com.example.smartfinancemanagementapp.ui.activity
 
 import android.os.Bundle
 import android.view.WindowManager
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.smartfinancemanagementapp.R
 import com.example.smartfinancemanagementapp.databinding.ActivityMainBinding
-import com.example.smartfinancemanagementapp.ui.fragment.ExchangeFragment
-import com.example.smartfinancemanagementapp.ui.fragment.GoalsFragment
-import com.example.smartfinancemanagementapp.ui.fragment.HomeFragment
-import com.example.smartfinancemanagementapp.ui.fragment.ProfileFragment
-import com.example.smartfinancemanagementapp.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val mainViewModel: MainViewModel by viewModels()
+
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,31 +25,31 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
 
-        openFragment(HomeFragment())
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+        openFragment(R.id.homeFragment)
 
         binding.layoutHome.setOnClickListener{
-            openFragment(HomeFragment())
+            openFragment(R.id.homeFragment)
         }
 
         binding.layoutProfile.setOnClickListener{
-            openFragment(ProfileFragment())
+            openFragment(R.id.profileFragment)
         }
 
         binding.layoutExchange.setOnClickListener{
-            openFragment(ExchangeFragment())
+            openFragment(R.id.exchangeFragment)
         }
 
         binding.layoutGoal.setOnClickListener {
-            openFragment(GoalsFragment())
+            openFragment(R.id.goalsFragment)
         }
-
     }
 
-    private fun openFragment(fragment: Fragment){
-        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+    private fun openFragment(fragment: Int){
+        navController.navigate(fragment)
 
-        transaction.replace(R.id.fragmentContainer, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+
     }
 }

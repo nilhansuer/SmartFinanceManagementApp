@@ -1,6 +1,5 @@
 package com.example.smartfinancemanagementapp.ui.fragment
 
-import ExpensePopupFragment
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -84,7 +83,7 @@ class HomeFragment : Fragment() {
         val expensePopupFragment = ExpensePopupFragment(categoryType) { category, price, pic, date ->
             addExpense(category, price, pic, date)
         }
-        expensePopupFragment.show(childFragmentManager, "ExpensePopupFragment")
+        expensePopupFragment.show(childFragmentManager, "com.example.smartfinancemanagementapp.ui.fragment.ExpensePopupFragment")
     }
 
     private fun addExpense(category: String, price: Double, pic: String, date: String) {

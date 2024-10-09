@@ -1,6 +1,7 @@
 package com.example.smartfinancemanagementapp.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,13 +18,16 @@ class EdittingProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        Log.d("EdittingProfileFragment", "onCreateView called")
         binding = FragmentEdittingProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Log.d("EdittingProfileFragment", "onViewCreated called")
 
         binding.backButton.setOnClickListener {
             parentFragmentManager.popBackStack()

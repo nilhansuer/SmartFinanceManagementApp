@@ -1,4 +1,4 @@
-package com.example.smartfinancemanagementapp.domain.Model
+package com.example.smartfinancemanagementapp.domain.model
 
 data class ExchangeDomain(
     val id: Int,

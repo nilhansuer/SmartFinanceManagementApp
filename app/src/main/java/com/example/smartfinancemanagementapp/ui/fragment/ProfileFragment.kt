@@ -1,11 +1,12 @@
 package com.example.smartfinancemanagementapp.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
 import com.example.smartfinancemanagementapp.R
 import com.example.smartfinancemanagementapp.databinding.FragmentProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,7 +20,7 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -27,20 +28,19 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.editProfileLayout.setOnClickListener{
-            openFragment(EdittingProfileFragment())
+        binding.editProfileLayout.setOnClickListener {
+            Log.d("ProfileFragment", "Navigating to edittingProfileFragment")
+            openFragment(R.id.edittingProfileFragment)
         }
-
     }
 
-    private fun openFragment(fragment: Fragment) {
-        val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-
-        transaction.replace(R.id.fragmentContainer, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+    private fun openFragment(fragment: Int) {
+        try {
+            val navController = findNavController()
+            navController.navigate(fragment)
+        } catch (e: Exception) {
+            Log.e("ProfileFragment", "Navigation error: ${e.message}")
+        }
     }
-
-
 
 }
