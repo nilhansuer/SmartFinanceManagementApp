@@ -2,12 +2,13 @@ package com.example.smartfinancemanagementapp.data
 
 import android.content.Context
 import androidx.room.Room
-import com.example.smartfinancemanagementapp.data.Model.ExpenseDao
-import com.example.smartfinancemanagementapp.data.Model.ExpenseDatabase
-import com.example.smartfinancemanagementapp.data.Model.GoalsDao
-import com.example.smartfinancemanagementapp.data.Model.GoalsDatabase
-import com.example.smartfinancemanagementapp.data.Repository.ExpenseRepository
-import com.example.smartfinancemanagementapp.data.Repository.GoalsRepository
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.smartfinancemanagementapp.data.dao.ExpenseDao
+import com.example.smartfinancemanagementapp.data.dao.GoalsDao
+import com.example.smartfinancemanagementapp.data.local.SmartFinanceDatabase
+import com.example.smartfinancemanagementapp.data.repository.ExpenseRepository
+import com.example.smartfinancemanagementapp.data.repository.GoalsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,13 +21,25 @@ import javax.inject.Singleton
 class AppModule {
 
     @Provides
-    @Singleton // Prevents creating a new db everytime the app runs.
-    fun provideExpenseDatabase(@ApplicationContext appContext: Context): ExpenseDatabase {
+    @Singleton
+    fun provideSmartFinanceDatabase(@ApplicationContext context: Context): SmartFinanceDatabase {
         return Room.databaseBuilder(
-            appContext,
-            ExpenseDatabase::class.java,
-            "expense_database"
+            context,
+            SmartFinanceDatabase::class.java,
+            "smart_finance_database"
         ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideExpenseDao(database: SmartFinanceDatabase): ExpenseDao {
+        return database.expenseDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGoalsDao(database: SmartFinanceDatabase): GoalsDao {
+        return database.goalsDao()
     }
 
     @Provides
@@ -37,30 +50,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideExpenseDao(database: ExpenseDatabase): ExpenseDao {
-        return database.expenseDao()
-    }
-
-
-    @Provides
-    @Singleton
-    fun provideGoalsDatabase(@ApplicationContext appContext: Context): GoalsDatabase {
-        return Room.databaseBuilder(
-            appContext,
-            GoalsDatabase::class.java,
-            "goals_database"
-        ).build()
-    }
-
-    @Provides
-    @Singleton
     fun provideGoalsRepository(goalsDao: GoalsDao): GoalsRepository {
         return GoalsRepository(goalsDao)
-    }
-
-    @Provides
-    @Singleton
-    fun provideGoalsDao(database: GoalsDatabase): GoalsDao {
-        return database.goalsDao()
     }
 }
