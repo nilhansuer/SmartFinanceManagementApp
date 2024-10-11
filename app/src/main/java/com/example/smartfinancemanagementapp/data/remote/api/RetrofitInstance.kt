@@ -1,18 +1,17 @@
 package com.example.smartfinancemanagementapp.data.remote.api
 
-import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 
 class RetrofitInstance{
 
-    companion object{
-        private var mainURL = "http://10.0.2.2:8080/"
+    companion object {
+        private const val mainURL = "https://www.tcmb.gov.tr/kurlar/"
 
-        fun getRetrofitInstance(): Retrofit{
+        fun getRetrofitInstance(): Retrofit {
             return Retrofit.Builder()
                 .baseUrl(mainURL)
-                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+                .addConverterFactory(SimpleXmlConverterFactory.create())
                 .build()
         }
     }

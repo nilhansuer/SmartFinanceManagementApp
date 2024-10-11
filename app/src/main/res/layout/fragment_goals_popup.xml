@@ -9,9 +9,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="380dp"
         android:layout_height="350dp"
-        android:elevation="10dp"
+        android:elevation="20dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/popup_bg2"
+        android:background="@drawable/white_bg"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
@@ -151,8 +151,8 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:background="@drawable/cancel_goal_button"
+                    android:textColor="@color/black"
+                    android:background="@drawable/cancel_button_popup"
                     android:clickable="true"/>
 
                 <TextView
@@ -166,8 +166,8 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:background="@drawable/add_goal_popup_button"
+                    android:textColor="@color/black"
+                    android:background="@drawable/add_button_popup"
                     android:clickable="true"/>
 
             </LinearLayout>

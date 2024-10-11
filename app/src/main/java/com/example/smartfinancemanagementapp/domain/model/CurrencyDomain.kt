@@ -1,6 +1,6 @@
 package com.example.smartfinancemanagementapp.domain.model
 
-data class ExchangeDomain(
+data class CurrencyDomain(
     val id: Int,
     val type: String,
     val sellRate: Double,
