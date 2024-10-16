@@ -1,7 +1,7 @@
 <h1 align="center" id="title">Smart Finance Management App</h1>
 
 <p id="description">The application, that is developed using cutting-edge Android components, enables users to manage their financial process more efficiently.</p>
-<p id="description">The project is actively developed, with new features and improvements continuously being added.</p>
+<p id="description">The project is actively developed, and new features and improvements are continuously added.</p>
 
   
   
