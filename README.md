@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Smart Finance Management App</h1>
 
-<p id="description">An application enables users to manage their financial process more efficiently.</p>
+<p id="description">An application that enables users to manage their financial process more efficiently.</p>
 
   
   
