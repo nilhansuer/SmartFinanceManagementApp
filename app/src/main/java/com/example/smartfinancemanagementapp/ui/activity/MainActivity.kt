@@ -49,7 +49,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun openFragment(fragment: Int){
         navController.navigate(fragment)
-
-
     }
 }

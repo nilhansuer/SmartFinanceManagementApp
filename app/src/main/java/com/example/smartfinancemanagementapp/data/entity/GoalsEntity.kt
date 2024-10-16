@@ -10,6 +10,6 @@ data class GoalsEntity(
     val goalName:String="",
     val categoryName:String="",
     val goalPic:String="",
-    val remainingPrice:Double=0.0,
-    val goalPrice:Double=0.0,
+    var remainingPrice:Double=0.0,
+    var goalPrice:Double=0.0,
 )

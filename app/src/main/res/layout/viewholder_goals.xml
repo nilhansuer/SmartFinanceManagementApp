@@ -24,6 +24,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/electronics" />
 
+    <ImageView
+        android:id="@+id/editButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/edit_icon"
+        android:clickable="true"/>
+
     <TextView
         android:id="@+id/goalTxt"
         android:layout_width="wrap_content"
@@ -59,7 +71,7 @@
         android:layout_marginBottom="10dp">
 
         <TextView
-            android:id="@+id/remainingPrice"
+            android:id="@+id/goalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="100 TL"
@@ -70,7 +82,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/goalPrice"
+            android:id="@+id/remainingPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="200 TL"
@@ -83,10 +95,15 @@
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:progressDrawable="@drawable/progress_bar_style"
+            android:max="100"
+            android:progress="50"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

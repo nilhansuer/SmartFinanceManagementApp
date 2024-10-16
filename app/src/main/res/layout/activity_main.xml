@@ -63,6 +63,7 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
+                <!--
                 <LinearLayout
                     android:id="@+id/layoutReport"
                     android:layout_width="0dp"
@@ -88,6 +89,7 @@
                         android:textStyle="bold"
                         android:textAlignment="center" />
                 </LinearLayout>
+                -->
 
                 <LinearLayout
                     android:id="@+id/layoutExchange"

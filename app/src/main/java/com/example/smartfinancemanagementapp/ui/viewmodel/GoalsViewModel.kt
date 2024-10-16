@@ -12,9 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class GoalsViewModel @Inject constructor(
-    private val repository: GoalsRepository
-) : ViewModel() {
+class GoalsViewModel @Inject constructor(private val repository: GoalsRepository) : ViewModel() {
 
     val allGoals: LiveData<List<GoalsEntity>> = repository.allGoals
 
@@ -34,11 +32,9 @@ class GoalsViewModel @Inject constructor(
         val dbName = "goals_database"
         val deleted = context.deleteDatabase(dbName)
         if (deleted) {
-            // Silme işlemi başarılı
-            Log.d("Goals Database", "$dbName başarıyla silindi.")
+            Log.d("Goals Database", "$dbName is deleted.")
         } else {
-            // Silme işlemi başarısız
-            Log.d("Goals Database", "$dbName silinemedi.")
+            Log.d("Goals Database", "$dbName couldn't be deleted.")
         }
     }
 }

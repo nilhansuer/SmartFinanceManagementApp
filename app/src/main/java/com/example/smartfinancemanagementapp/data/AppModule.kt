@@ -2,8 +2,6 @@ package com.example.smartfinancemanagementapp.data
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.smartfinancemanagementapp.data.dao.ExpenseDao
 import com.example.smartfinancemanagementapp.data.dao.GoalsDao
 import com.example.smartfinancemanagementapp.data.local.SmartFinanceDatabase
