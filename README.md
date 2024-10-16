@@ -6,7 +6,7 @@
   
 <h2>🧐 Features</h2>
 
-Here're some of the project's best features:
+Here're some of the project's features:
 
 *   The users are able to add their expenses with respect to the category type date and price.
 *   They can also display the currency rates by the api belongs the TCMB.
