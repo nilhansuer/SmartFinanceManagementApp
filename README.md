@@ -30,3 +30,5 @@ Technologies used in the project:
 *   Coroutine
 *   Navigation Component
 *   Instrumented Testing
+*   Glide
+*   Annotation Processor
