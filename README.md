@@ -1,12 +1,9 @@
 <h1 align="center" id="title">Smart Finance Management App</h1>
+<p id="description">🛠️ The project is actively developed, and new features and improvements are continuously added.</p>
+<p id="description">The application, that is developed using cutting-edge Android components, enables users to manage their financial process more efficiently.</p>
 
 https://github.com/user-attachments/assets/82c836d7-8b16-47b8-a793-1fd95e20e3aa
 
-<p id="description">The application, that is developed using cutting-edge Android components, enables users to manage their financial process more efficiently.</p>
-<p id="description">🛠️ The project is actively developed, and new features and improvements are continuously added.</p>
-
-  
-  
 <h2>🧐 Features</h2>
 
 Here're some of the project's features:
